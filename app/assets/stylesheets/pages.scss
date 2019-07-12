@@ -1,0 +1,10 @@
+::selection {
+  background-color: #f3c30f;
+  color:  #000;
+}
+
+/*** Mozilla based browsers ***/
+::-moz-selection {
+  background-color: #f79b23;
+  color: #000;
+}

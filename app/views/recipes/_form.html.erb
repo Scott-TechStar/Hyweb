@@ -1,0 +1,70 @@
+<%= form_with(model: recipe , local: true) do |form| %>
+  <% if recipe.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
+
+      <ul>
+      <% recipe.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group ">
+    <div class="field">
+      <%= form.label :title %>
+      <%= form.text_field :title, class: "form-control recipe-new", style: "border-radius: 20px" %>
+    </div>
+  </div>
+
+  <div class="form-group recipe">
+    <div class="field">
+      <%= form.label :description %>
+      <%= form.text_area :description, class: "form-control recipe-new" , style: "border-radius: 20px" %>
+    </div>
+  </div>
+
+    <div class="col-md-6 " style="margin-top: 50px; float: left; ">
+      <h5>Add Ingridients</h5>
+
+      <div class="form-group ">
+        <div class="field">
+
+            <%= form.nested_fields_for :ingridients do |ingridient| %>
+              <%= ingridient.text_field :content , class: "form-control ", style: "border-radius: 20px" %>
+              <%= ingridient.remove_nested_fields_link   'Remove ingridient', class: 'btn'%> <br><br>
+            <% end %>
+
+            <%= form.add_nested_fields_link :ingridients, 'Add Another Ingridient', class: 'btn' %>
+
+        </div>
+      </div>
+      <div class="col-md-6 " style="margin-top: 50px; float: left; ">
+        <h5>Add Steps</h5>
+        <div class="form-group ">
+          <div class="field">
+
+              <%= form.nested_fields_for :steps do |step| %>
+                <%= step.text_field :direction , class: "form-control ", style: "border-radius: 20px" %>
+                <%= step.remove_nested_fields_link   'Remove Step', class: 'btn'%> <br><br>
+              <% end %>
+
+              <%= form.add_nested_fields_link :steps, 'Add Another Step', class: 'btn' %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <div class="form_btn_area text-center">
+    <div class="actions">
+
+      <%= file_field_tag 'upload image' ,  :class=> 'btn'%>
+    </div>
+  </div>
+
+  <div class="form_btn_area text-center">
+    <div class="actions">
+      <%= form.submit 'Create Recipe', :class=> 'btn' %>
+    </div>
+  </div>
+<% end %>

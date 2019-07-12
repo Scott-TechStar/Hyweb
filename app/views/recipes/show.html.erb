@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @recipe.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @recipe.description %>
+</p>
+<h3>Ingridients</h3>
+  <ul>
+    <% for @recipe in @recipe.ingridients  %>
+        <li> <%= @recipe.content %></li>
+    <% end %>
+  </ul>
+
+<!--<h3>Steps</h3><br>-->
+<!--  <ol>-->
+      <%# for @recipe in @recipe.ingridients %>
+
+<!--      <li> <%#= @recipe.direction %></li>-->
+    <%# end %>
+<!--  </ol>-->
+<%= link_to 'Edit', edit_recipe_path(@recipe), class: "btn btn-success" %>
+<%= link_to 'Back', recipes_path , class: "btn btn-warning" %>

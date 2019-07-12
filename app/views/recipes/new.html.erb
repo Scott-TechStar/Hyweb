@@ -1,0 +1,35 @@
+
+<%= render "pages/navigation" %>
+<div class="jumbotron">
+  <div class="container">
+
+      <div class="pull-left">
+        <div class="banner-force">
+<!--          <img src="assets/order.png" class="jumbomage">-->
+          <%= image_tag("order.png", class: "jumbomage") %>
+        </div>
+      </div>
+
+      <div class="pull-right">
+        <div class="main_banner_area text-center">
+
+            <div class="single_banner_text wow zoomIn" data-wow-duration="1s">
+              <p>CREATE NEW RECIPE</p>
+              <div class="separetor">...</div>
+            </div>
+
+        </div>
+      </div>
+  </div>
+</div>
+<div class="col-xs-6" style="margin-top: 50px; margin-left: 500px;">
+  <h5>Add A New Recipe</h5> <br>
+  <%= render 'form', recipe: @recipe , steps: @step , ingridients: @ingridients %>
+
+      <div class="form-group recipe">
+        <div class="field">
+          <%= link_to 'Back', recipes_path , class: 'btn'%>
+        </div>
+      </div>
+
+</div>
