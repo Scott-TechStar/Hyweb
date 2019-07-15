@@ -1,5 +1,8 @@
-<p id="notice"><%= notice %></p>
 
+  <p id="notice"><%= notice %></p>
+
+
+<%= image_tag(@recipe.image) if @recipe.image.attached? %>
 <p>
   <strong>Title:</strong>
   <%= @recipe.title %>
@@ -9,7 +12,7 @@
   <strong>Description:</strong>
   <%= @recipe.description %>
 </p>
-<h3>Ingridients</h3>
+<h3>Ingredients</h3>
   <ul>
     <% for @recipe in @recipe.ingridients  %>
         <li> <%= @recipe.content %></li>

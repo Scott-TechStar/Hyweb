@@ -57,8 +57,8 @@
 
   <div class="form_btn_area text-center">
     <div class="actions">
-
-      <%= file_field_tag 'upload image' ,  :class=> 'btn'%>
+      <%= form.label :image %>
+      <%= form.file_field :image,  :class=> 'btn'%>
     </div>
   </div>
 

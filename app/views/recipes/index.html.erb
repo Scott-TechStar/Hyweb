@@ -1,31 +1,24 @@
-<%= render "pages/header" %>
+<%= render "recipes/showheader" %>
+
 
 <p id="notice"><%= notice %></p>
 
-<h1>Recipes</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<h1 style="margin-left: 850px; margin-bottom: 10px; ">Recipes</h1>
+<div class="separetor" style="margin-bottom: 20px"></div>
 
-  <tbody>
     <% @recipes.each do |recipe| %>
-      <tr>
-        <td><%= recipe.title %></td>
-        <td><%= recipe.description %></td>
-        <td><%= link_to 'Show', recipe %></td>
-        <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-        <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+  <div class="col-md-4 col-sm-6 col-xs-12 " style="height: 500px; width: 500px; border-radius: 10px; border-bottom-color: #000; margin-left: 100px; ">
+            <div class="single_special_img" style= "width: 100%">
+            <%= link_to image_tag(recipe.image ,  class: "single_special_img" , style: "width: 100%"), recipe %>
+              <h2 style="width: 450px; margin-top: 10px; "> <%= recipe.title %></h2>
+            </div>
+
+              <%= link_to 'Edit', edit_recipe_path(recipe) , class: "btn" %>
+              <%= link_to 'Destroy', recipe,class: "btn", method: :delete , data: {confirm: 'Are you sure you want to delete this recipe?'}%>
+
+    </div>
+
     <% end %>
-  </tbody>
-</table>
 
 <br>
-
-<%= link_to 'New Recipe', new_recipe_path %>
