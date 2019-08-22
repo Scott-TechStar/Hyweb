@@ -1,1 +1,7 @@
 <h1>Categories</h1>
+
+<% @categories.each do |category| %>
+    <h2 style="width: 450px; margin-top: 10px; "> <%= category.name %></h2>
+
+    <h4 style="width: 450px; margin-top: 10px; "> <%= category.description%></h4>
+<% end %>
