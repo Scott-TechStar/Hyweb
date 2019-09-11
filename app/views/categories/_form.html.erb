@@ -14,6 +14,13 @@
     </div>
   </div>
 
+  <div class="form-group recipe">
+    <div class="field">
+      <%= form.label :Image %>
+      <%= form.file_field :image  , class: "btn" %>
+    </div>
+  </div>
+
   <div class="form_btn_area text-center">
     <div class="actions">
       <%= form.submit 'Create Category', :class=> 'btn' %>

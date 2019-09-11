@@ -14,6 +14,8 @@ class RecipesController < ApplicationController
 
   # GET /recipes/new
   def new
+    
+    @categories = Category.all
     @recipe = Recipe.new
   end
 
@@ -56,7 +58,7 @@ class RecipesController < ApplicationController
   def destroy
     @recipe.destroy
     respond_to do |format|
-      format.html { redirect_to recipes_url, notice: 'Recipe was successfully destroyed.' }
+      format.html { redirect_to recipes_url, notice: 'Recipe was successfully destroyed.'}
       format.json { head :no_content }
     end
   end
@@ -70,7 +72,7 @@ class RecipesController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def recipe_params
     params.require(:recipe)
-        .permit(:title, :description, :image,
+        .permit(:title, :description, :image, :category_id,
                 ingridients_attributes: %i[id content _destroy],
                 steps_attributes: %i[id direction _destroy])
   end

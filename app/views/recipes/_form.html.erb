@@ -24,7 +24,14 @@
     </div>
   </div>
 
-    <div class="col-md-6 " style="margin-top: 50px; float: left; ">
+    <div class="form-group recipe">
+    <div class="field">
+     <%= form.select :category_id , Category.all.collect { |category| [category.name, category.id]}, class: "btn" %>
+    </div>
+  </div>
+
+
+    <div  class="form-group recipe" style="margin-top: 50px; float: left; ">
       <h5>Add Ingridients</h5>
 
       <div class="form-group ">
@@ -39,7 +46,7 @@
 
         </div>
       </div>
-      <div class="col-md-6 " style="margin-top: 50px; float: left; ">
+      <div style="margin-top: 50px; float: left; ">
         <h5>Add Steps</h5>
         <div class="form-group ">
           <div class="field">

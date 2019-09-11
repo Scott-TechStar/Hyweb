@@ -1,0 +1,35 @@
+<%= render  "pages/navigation" %>
+<section id="abouts" class="abouts sections">
+  <div class="container">
+    <div class="row">
+      <div class="main_abouts">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="single_abouts wow slideInLeft" data-wow-duration="2s">
+            <div class="head_title text-center">
+
+              <p>
+                <strong>Title:</strong>
+                <%= @category.name %>
+              </p>
+
+              <div class="separetor"></div>
+            </div>
+           <p>
+              <strong>Description:</strong>
+              <%= @category.description %>
+           </p>
+
+          </div>
+        </div>
+
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="single_abouts wow slideInRight" data-wow-duration="2s">
+           
+
+           <%=image_tag(@category.image)%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

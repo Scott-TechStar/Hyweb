@@ -1,30 +1,63 @@
+<%= render  "pages/navigation" %>
+<section id="abouts" class="abouts sections">
+  <div class="container">
+    <div class="row">
+      <div class="main_abouts">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="single_abouts wow slideInLeft" data-wow-duration="2s">
+            <div class="head_title text-center">
 
-  <p id="notice"><%= notice %></p>
+              <p>
+                <strong>Title:</strong>
+                <%= @recipe.title %>
+              </p>
+
+              <div class="separetor"></div>
+            </div>
+           <p>
+              <strong>Description:</strong>
+              <%= @recipe.description %>
+           </p>
+
+          </div>
+        </div>
+
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="single_abouts wow slideInRight" data-wow-duration="2s">
+           <%= image_tag(@recipe.image, class: "single_special_img" , style:"margin-left: 200px; border-radius:20px;") if @recipe.image.attached? %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
-<%= image_tag(@recipe.image) if @recipe.image.attached? %>
-<p>
-  <strong>Title:</strong>
-  <%= @recipe.title %>
-</p>
+ <div class="list-group">
+   <a href="#" class="list-group-item list-group-item-info text-center" style="color: #fff"><h3>Ingredients</h3></a>
 
-<p>
-  <strong>Description:</strong>
-  <%= @recipe.description %>
-</p>
-<h3>Ingredients</h3>
-  <ul>
-    <% for @recipe in @recipe.ingridients  %>
-        <li> <%= @recipe.content %></li>
+  <ul class="list-group-item">
+    <% for recipe in @recipe.ingridients  %>
+    <a href="#" class="list-group-item">
+      <li> <%= recipe.content %></li>
+    </a>
+
     <% end %>
   </ul>
+  </div>
 
-<!--<h3>Steps</h3><br>-->
-<!--  <ol>-->
-      <%# for @recipe in @recipe.ingridients %>
+  <div class="list-group">
+  <a href="#" class="list-group-item list-group-item-info  text-center" style="color: #fff"><h3>Steps</h3></a>
 
-<!--      <li> <%#= @recipe.direction %></li>-->
-    <%# end %>
-<!--  </ol>-->
-<%= link_to 'Edit', edit_recipe_path(@recipe), class: "btn btn-success" %>
-<%= link_to 'Back', recipes_path , class: "btn btn-warning" %>
+  <ol class="list-group-item">
+
+ <% for recipe in @recipe.steps %>
+        <a href="#" class="list-group-item">
+      <li> <%= recipe.direction %></li>
+    </a>
+    <% end %>
+
+  </ol>
+  </div>
+<%= link_to 'print', edit_recipe_path(@recipe), class: "btn btn-success center" %>
+<%= link_to 'Back', recipes_path , class: "btn btn-warning center" %>
