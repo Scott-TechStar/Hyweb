@@ -25,7 +25,8 @@
                   <li><%=link_to 'Categories' , categories_path %></li>
                   <li><a href="#special">Videos</a></li>
                   <li><%= link_to 'sign up', new_user_registration_path%></li>
-                  <li><a href="#abouts">Login</a></li>
+                  <li><%= link_to 'sign out', destroy_user_session_path , method: :delete %></li>
+                  <li><%= link_to 'login', new_user_session %></li>                 
 <!--                  <a href="gallery.html">Gallery</a></li>-->
                 </ul>
               </div><!-- /.navbar-collapse -->
