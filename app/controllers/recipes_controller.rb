@@ -1,6 +1,7 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: %i[show edit update destroy]
   before_action :authenticate_user!, except: [:show , :index]
+ 
 
   # GET /recipes
   # GET /recipes.json
@@ -63,6 +64,12 @@ class RecipesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def set_slug
+    self.slug = title.to_s.parameterize
+  end
+
+ 
 
   private
   # Use callbacks to share common setup or constraints between actions.

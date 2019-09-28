@@ -9,4 +9,11 @@ class Recipe < ApplicationRecord
   belongs_to :category
   belongs_to :user
 
+  after_validation :set_slug , only: [:create, :update]
+
+  def to_param
+    "#{id}-#{slug}"
+  end
+
+
 end
