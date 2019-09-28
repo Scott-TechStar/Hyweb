@@ -49,6 +49,10 @@ class CategoriesController < ApplicationController
     end
   end
 
+  def set_slug
+    self.slug = name.to_s.parameterize
+  end
+  
 end
 
 
