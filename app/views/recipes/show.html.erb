@@ -89,7 +89,7 @@
                     <div class="recipe-by-block w-clearfix">
                             <%= image_tag "matthew.png" , :alt => "" , :class => "recipe-author-profile" %> 
                         <div class="recipe-by-title">This is a recipe by</div>
-                        <div class="name recipe-by-title">Aritha Franklin</div><a class="view-all"
+                        <div class="name recipe-by-title"><%= @recipe.user.username %></div><a class="view-all"
                             href="/cooks/akira-johnson">View all my recipes</a>
                     </div>
                 </div>

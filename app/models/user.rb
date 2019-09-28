@@ -6,4 +6,8 @@ class User < ApplicationRecord
 
   has_many :recipes,dependent: :destroy
   
+  def username
+    self.email.split('@')[0].capitalize
+  end
+
 end
