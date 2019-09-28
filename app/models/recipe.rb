@@ -7,5 +7,6 @@ class Recipe < ApplicationRecord
   accepts_nested_attributes_for :steps, allow_destroy: true
 
   belongs_to :category
+  belongs_to :user
 
 end

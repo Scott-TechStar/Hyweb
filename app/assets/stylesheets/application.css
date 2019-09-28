@@ -17,6 +17,7 @@
 @import "pages.scss";
 @import "recipes.scss";
 @import "style.scss";
+@import "showpage.scss";
 @import "responsive.scss";
 @import "animate.min.scss";
 @import "bootstrap.min.scss";
