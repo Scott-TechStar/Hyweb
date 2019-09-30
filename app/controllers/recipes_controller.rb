@@ -69,6 +69,12 @@ class RecipesController < ApplicationController
     self.slug = title.to_s.parameterize
   end
 
+  def download_recipe
+    pdf = WickedPdf.new.pdf_from_string(
+      render_to_string('recipes/show.html.erb' , layout:false)
+    )
+    send_data pdf,:filename=>"recipe.pdf",:type=>"application/pdf",:disposition=>"attachment"
+  end
  
 
   private

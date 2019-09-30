@@ -11,6 +11,10 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 
 gem 'devise'
+
+gem 'wicked_pdf'
+
+gem 'wkhtmltopdf-binary'
 # use jquery
 gem 'fancybox-rails'
 gem 'jquery-rails'
