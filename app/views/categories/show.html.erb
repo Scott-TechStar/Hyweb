@@ -33,21 +33,3 @@
   </div>
 </section>
 
-   <% @categories.each do |category| %>
-  <div class="col-md-4 col-sm-6 col-xs-12 " style="height: 500px; width: 500px; border-radius: 10px; border-bottom-color: #000; margin-left: 100px; ">
-         <div class="single_special_img" style= "width: 100%">
-            <%= link_to image_tag(recipe.image ,  class: "single_special_img" , style: "width: 100%"), recipe %>
-              <h2 style="width: 450px; margin-top: 10px;"> <%= category.recipe.title %></h2><br>
-
-              <% if recipe.user %>
-              <h3 style="width: 450px; margin-top: 10px;"> Recipe by:</h3> <h4 style="width: 450px; margin-top: 10px;"><% recipe.user.id %></h4>
-              <% end %>
-        </div>
-            
-            <% if current_user && current_user.admin %>
-              <%= link_to 'Edit', edit_recipe_path(recipe) , class: "btn" %>
-              <%= link_to 'Destroy', recipe,class: "btn", method: :delete , data: {confirm: 'Are you sure you want to delete this recipe?'}%>
-            <% end %>
-    </div>
-
-    <% end %>
