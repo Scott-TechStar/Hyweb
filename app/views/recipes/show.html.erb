@@ -96,3 +96,9 @@
             </div>
         </div>
     </div>
+
+    <div class="section tint">
+      <h3>Comments</h3>
+      <%= render partial: 'comments/form', locals: { commentable: @recipe} %>
+      <%= render @recipe.comments %>
+    </div>

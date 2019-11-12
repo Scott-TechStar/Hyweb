@@ -18,6 +18,7 @@
 //= require popper
 //= require wow
 //= require fancybox
+
 //= require lightbox
 //= require nested_form_fields
 //= require turbolinks

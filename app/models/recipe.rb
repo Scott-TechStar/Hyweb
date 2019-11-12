@@ -1,6 +1,7 @@
 class Recipe < ApplicationRecord
   has_one_attached :image
   has_many :ingridients, dependent: :destroy
+  has_many :comments, as: :commentable
   accepts_nested_attributes_for :ingridients, allow_destroy: true
 
   has_many :steps, dependent: :destroy
